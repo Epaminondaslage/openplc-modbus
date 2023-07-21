@@ -23,7 +23,7 @@ Os endereços Modbus vinculam-se a endereços PLC com base no valor do endereço
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diagmodbus.png" width="50%" /></td>
+<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/Figura_1.png/diagmodbus.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
@@ -37,7 +37,7 @@ Devido a limitações de memória, plataformas embarcadas como placas Arduino po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diagmodbusarduino.png" width="50%" /></td>
+<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbusarduino.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino.</td>
@@ -50,7 +50,7 @@ Plataformas baseadas em ATmega 328P, ATmega 168, ATmega32U4 e ATmega16U4 como o 
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="./img/diagmodbusarduinouno.png" width="50%" /></td>
+<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbusarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 15 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
@@ -68,4 +68,4 @@ Por exemplo, se o endereço Modbus para uma bobina de saída discreta for 22, a 
 
 # Dispositivos Escravos
 
-https://openplcproject.com/docs/2-6-slave-devices/
+* https://openplcproject.com/docs/2-6-slave-devices/
