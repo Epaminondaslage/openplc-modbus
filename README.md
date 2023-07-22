@@ -9,6 +9,7 @@ Prof Epaminondas Lage</p>
 * [Endereçamento Modbus](#EndereçamentoModbus)
 * [Funções Modbus no OpenPLC](#Funções-Modbus-no-OpenPLC)
 * [Dispositivos Escravos](#Dispositivos-Escravos)
+* [Adicionando Placas Compatíveis com Arduino como Dispositivos Escravos](#Adicionando-Placas-Compatíveis-com-Arduino-como-Dispositivos-Escravos)
 
 # Introdução
 
@@ -82,6 +83,22 @@ Bobinas de saída discreta e ligação de contatos de entrada discretos são bas
 Por exemplo, se o endereço Modbus para uma bobina de saída discreta for 22, a parte mais significativa será 2 (22/8) e a parte menos significativa será 6 (22 mod 8). Portanto, o endereço do PLC é %QX2.6.
 
 # Dispositivos Escravos
+
+Para expandir o número de pontos de E/S no OpenPLC Runtime em dispositivos Windows ou Linux, é possível conectar dispositivos escravos Modbus. Essa funcionalidade é particularmente útil para sistemas que não possuem nenhum ponto de E/S, como o OpenPLC Runtime em computadores desktop ou servidores, por exemplo. O OpenPLC Runtime suporta dispositivos escravos usando tanto a comunicação Modbus/TCP (rede) quanto a Modbus/RTU (serial). Também são suportados dispositivos com capacidade sem fio que podem transmitir pacotes Modbus por TCP/IP.
+
+Para adicionar um dispositivo escravo ao OpenPLC Runtime, siga estas etapas:
+
+    Inicie o OpenPLC Runtime do Raspberry
+    Faça login na interface web do OpenPLC Runtime.
+    No menu à esquerda, vá para "Dispositivos Escravos" e clique em "Adicionar novo dispositivo".
+
+Depois de adicionar o dispositivo escravo, é possível configurar suas definições de comunicação e integrá-lo ao OpenPLC Runtime para expandir os pontos de E/S e aprimorar a funcionalidade do seu sistema de automação. 
+
+# Adicionando Placas Compatíveis com Arduino como Dispositivos Escravos
+
+O OpenPLC oferece modelos para facilitar a adição de placas Arduino como dispositivos escravos. O único requisito é que a placa Arduino também esteja executando o micro-runtime do OpenPLC e configurada para exportar suas portas de E/S através do protocolo Modbus. A maneira mais simples de instalar o micro-runtime do OpenPLC em suas placas Arduino é utilizando o OpenPLC Editor com um projeto em branco
+
+
 
 * https://openplcproject.com/docs/2-6-slave-devices/
 
