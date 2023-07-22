@@ -1,4 +1,4 @@
-<img src="/img/Logo_CEFET-MG.png" width="20%">
+<img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/Logo_CEFET-MG.png" width="20%">
 Repositório OpenPLC e Modbus</p>
 Prof Epaminondas Lage</p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
