@@ -84,3 +84,7 @@ Por exemplo, se o endereço Modbus para uma bobina de saída discreta for 22, a 
 # Dispositivos Escravos
 
 * https://openplcproject.com/docs/2-6-slave-devices/
+
+# Status do Projeto
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
