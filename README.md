@@ -1,13 +1,28 @@
-# openplc-modbus
-Conexão do  OpenPLC através do Modbus
+<img src="/img/Logo_CEFET-MG.png" width="20%">
+Repositório OpenPLC e Modbus</p>
+Prof Epaminondas Lage</p>
+<a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
-# Protocolo Modbus
+# Índice 
+
+* [Introdução](#Introdução)
+* [Endereçamento Modbus](#EndereçamentoModbus)
+* [Funções Modbus no OpenPLC](#Funções-Modbus-no-OpenPLC)
+* [Dispositivos Escravos](#Dispositivos-Escravos)
+
+# Introdução
+
+O Modbus é um protocolo de comunicação simples e eficiente usado para a troca de informações entre dispositivos em um ambiente industrial. Este protocolo  é suportado no OpenPLC, tornando-o uma opção a ser considerada para comunicação com dispositivos e equipamentos industriais que usam esse protocolo. 
+
+No OpenPLC, é possível implementar a comunicação Modbus tanto na versão mestre (cliente) quanto na versão escrava (servidor). Isso permite que o OpenPLC atue como um dispositivo mestre para ler e escrever dados de dispositivos Modbus escravos, ou como um dispositivo escravo para responder a solicitações de leitura ou escrita de outros dispositivos Modbus mestres.
 
 # Endereçamento Modbus
 
 O OpenPLC pode ser configurado como escravo Modbus (servidor). Um escravo Modbus é normalmente controlado por um mestre que realiza medição e controle. O mestre remoto inicia requisições de leitura e escrita para o escravo OpenPLC enviando quadros Modbus pela rede (Modbus/TCP). O micro runtime OpenPLC para placas compatíveis com Arduino também suporta quadros Modbus via serial e USB. O OpenPLC Runtime para hosts Linux e Windows possui um servidor Modbus rodando por padrão na porta TCP 502. Esta configuração pode ser alterada na aba “Settings”.
 
-## OpenPLC suporta os seguintes códigos de função Modbus:
+# Funções Modbus no OpenPLC
+
+O OpenPLC suporta os seguintes códigos de função Modbus:
 
 * Ler bobina de saída discreta (0x01)
 * Bobina de saída discreta de gravação (0x05)
