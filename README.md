@@ -40,10 +40,10 @@ Pode-se usar o Modbus com um computador para configurar ou coletar dados de um d
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbusarduino.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/rede_PLC.png" width="20%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino.</td>
+<td style="text-align: center;">Figura 1 - Topologia de Rede de Automação.</td>
 </tr>
 </tbody>
 </table>
@@ -130,10 +130,10 @@ Os endereços Modbus vinculam-se a endereços PLC com base no valor do endereço
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbus.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/diagmodbus.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 13 - Endereçamento Modbus para Openplc em Windows e Linux.</td>
+<td style="text-align: center;">Figura 2- Endereçamento Modbus para Openplc em Windows e Linux.</td>
 </tr>
 </tbody>
 </table>
@@ -144,10 +144,10 @@ Devido a limitações de memória, plataformas embarcadas como placas Arduino po
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbusarduino.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/diagmodbusarduino.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino.</td>
+<td style="text-align: center;">Figura 3 - Endereçamento Modbus para Openplc para Arduino.</td>
 </tr>
 </tbody>
 </table>
@@ -157,10 +157,10 @@ Plataformas baseadas em ATmega 328P, ATmega 168, ATmega32U4 e ATmega16U4 como o 
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbusarduinouno.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/diagmodbusarduinouno.png" width="50%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 15 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
+<td style="text-align: center;">Figura 4 - Endereçamento Modbus para Openplc para Arduino Nuno, ATmega 328P, ATmega 168 entre outros.</td>
 </tr>
 </tbody>
 </table>
