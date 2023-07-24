@@ -40,7 +40,7 @@ Pode-se usar o Modbus com um computador para configurar ou coletar dados de um d
 <table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="/img/rede_PLC.png" width="150%" /></td>
+<td style="width: 50%;"><img src="/img/rede_PLC.png" width="100%" /></td>
 </tr>
 <tr>
 <td style="text-align: center;">Figura 1 - Topologia de Rede de Automação.</td>
