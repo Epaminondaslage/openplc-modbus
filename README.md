@@ -17,7 +17,7 @@ O Modbus é um protocolo de comunicação simples e eficiente usado para a troca
 
 Em termos simples, é um método usado para transmitir informação dispositivos eletrônicos. O dispositivo que solicita a informação é chamado de Modbus Master (Mestre) e os dispositivos que fornecem informação são os Modbus Slaves (Escravo).
 
-O Modbus é um protocolo de comunicação da camada de aplicação (modelo OSI) e pode utilizar o RS-232, RS-485 ou Ethernet como meios físicos - equivalentes camada de enlace (ou link) e camada física do modelo. O protocolo possui comandos para envio de dados discretos (entradas e saídas digitais) ou numéricos (entradas e saídas analógicas).
+Protocolo de comunicação da camada de aplicação (modelo OSI) e pode utilizar o RS-232, RS-485 ou Ethernet como meios físicos - equivalentes camada de enlace (ou link) e camada física do modelo. Possui comandos para envio de dados discretos (entradas e saídas digitais) ou numéricos (entradas e saídas analógicas).
 
 Ele se tornou um protocolo de comunicação padrão na indústria e atualmente é o meio mais comum para conectar dispositivos eletrônicos industriais. É utilizado amplamente por vários fabricantes em diferentes segmentos industriais, sendo o Modbus tipicamente usado para transmitir sinais de instrumentação e dispositivos de controle para um sistema controlador ou sistema de coleta de dados.
 
@@ -37,9 +37,18 @@ Entre as funções básicas de um Modbus estão os comandos de alteração de va
 
 Pode-se usar o Modbus com um computador para configurar ou coletar dados de um dispositivo de campo. Você pode ter comunicação serial com o Modbus RTU e ASCII ou usando um cabo Ethernet para utilizar o Modbus TCP/IP.
 
-Existem várias versões do protocolo Modbus, projetadas para diferentes interfaces de comunicação.
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="https://github.com/Epaminondaslage/OpenPLC/blob/master/img/diagmodbusarduino.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 14 - Endereçamento Modbus para Openplc para Arduino.</td>
+</tr>
+</tbody>
+</table>
 
-Aqui estão as principais versões:
+Existem várias versões do protocolo Modbus, projetadas para diferentes interfaces de comunicação.Podemos citar três mais comuns:
 
 * Modbus RTU: Usado em comunicação serial, o Modbus RTU emprega uma representação compacta e binária dos dados para a comunicação. Ele inclui um checksum de redundância cíclica (CRC) como mecanismo de verificação de erros para garantir a confiabilidade dos dados. O Modbus RTU é a implementação mais comum do Modbus e requer transmissão contínua sem hesitações entre caracteres. As mensagens do Modbus RTU são enquadradas por períodos ociosos (silêncio).
 * Modbus ASCII: Também usado em comunicação serial, o Modbus ASCII utiliza caracteres ASCII para a comunicação do protocolo. Ele emprega um checksum de redundância longitudinal (LRC). As mensagens do Modbus ASCII são enquadradas por dois caracteres: dois pontos (":") no início e uma nova linha (CR/LF) no final.
@@ -102,9 +111,11 @@ Nenhum checksum é utilizado no Modbus TCP/IP, pois a camada de transporte TCP j
 
 O OpenPLC pode ser configurado como escravo Modbus (servidor). Um escravo Modbus é normalmente controlado por um mestre que realiza medição e controle. O mestre remoto inicia requisições de leitura e escrita para o escravo OpenPLC enviando quadros Modbus pela rede (Modbus/TCP). O micro runtime OpenPLC para placas compatíveis com Arduino também suporta quadros Modbus via serial e USB. O OpenPLC Runtime para hosts Linux e Windows possui um servidor Modbus rodando por padrão na porta TCP 502. Esta configuração pode ser alterada na aba “Settings”.
 
-Funções Modbus no OpenPLC
-o OpenPLC suporta os seguintes códigos de função Modbus:
-1.	Ler bobina de saída discreta (0x01): Permite ao dispositivo mestre ler o estado de uma única bobina de saída discreta (ligada/desligada) em um dispositivo escravo.
+## Funções Modbus no OpenPLC
+
+O OpenPLC suporta os seguintes códigos de função Modbus:
+
+1. Ler bobina de saída discreta (0x01): Permite ao dispositivo mestre ler o estado de uma única bobina de saída discreta (ligada/desligada) em um dispositivo escravo.
 2.	Bobina de saída discreta de gravação (0x05): Permite ao dispositivo mestre alterar o estado de uma única bobina de saída discreta (ligada/desligada) em um dispositivo escravo.
 3.	Escrever várias bobinas de saída discreta (0x0F): Permite ao dispositivo mestre alterar o estado de várias bobinas de saída discretas (ligadas/desligadas) em um dispositivo escravo.
 4.	Ler contatos de entrada discreta (0x02): Permite ao dispositivo mestre ler o estado de uma ou várias entradas discretas (contatos) em um dispositivo escravo.
@@ -168,9 +179,9 @@ Para expandir o número de pontos de E/S no OpenPLC Runtime em dispositivos Wind
 
 Para adicionar um dispositivo escravo ao OpenPLC Runtime, siga estas etapas:
 
-    Inicie o OpenPLC Runtime do Raspberry
-    Faça login na interface web do OpenPLC Runtime.
-    No menu à esquerda, vá para "Dispositivos Escravos" e clique em "Adicionar novo dispositivo".
+* Inicie o OpenPLC Runtime do Raspberry
+* Faça login na interface web do OpenPLC Runtime.
+* No menu à esquerda, vá para "Dispositivos Escravos" e clique em "Adicionar novo dispositivo".
 
 Depois de adicionar o dispositivo escravo, é possível configurar suas definições de comunicação e integrá-lo ao OpenPLC Runtime para expandir os pontos de E/S e aprimorar a funcionalidade do seu sistema de automação. 
 
@@ -178,9 +189,25 @@ Depois de adicionar o dispositivo escravo, é possível configurar suas definiç
 
 O OpenPLC oferece modelos para facilitar a adição de placas Arduino como dispositivos escravos. O único requisito é que a placa Arduino também esteja executando o micro-runtime do OpenPLC e configurada para exportar suas portas de E/S através do protocolo Modbus. A maneira mais simples de instalar o micro-runtime do OpenPLC em suas placas Arduino é utilizando o OpenPLC Editor com um projeto em branco
 
+## Para adicionar um Dispositivo Escravo (Slave Device) no OpenPLC, siga os passos técnicos a seguir:
+
+* Inicie o OpenPLC Runtime na máquina hospedeira. Certifique-se de que o software OpenPLC Runtime esteja instalado e em execução.
+* Acesse a interface web do OpenPLC. Abra um navegador e digite o endereço IP ou o nome do host da máquina onde o OpenPLC Runtime está em execução. Isso o levará à interface web do OpenPLC.
+* Faça login na interface web usando suas credenciais de administrador.
+* No menu lateral esquerdo, clique na opção "Slave Devices" (Dispositivos Escravos) para acessar a página de configuração dos Dispositivos Escravos.
+* Na página dos Dispositivos Escravos, clique no botão ou link "Add new device" (Adicionar novo dispositivo) para iniciar o processo de adição de um novo Dispositivo Escravo.
+* Especifique as informações do Dispositivo Escravo, incluindo o endereço físico ou lógico, o tipo de protocolo de comunicação (por exemplo, Modbus RTU, Modbus TCP/IP) e outros parâmetros relevantes, conforme exigido pelo protocolo específico.
+* Após fornecer as informações necessárias, clique no botão "Save" (Salvar) ou "Add" (Adicionar) para adicionar o Dispositivo Escravo à configuração do OpenPLC.
+* Verifique se o Dispositivo Escravo foi adicionado corretamente e se as configurações estão corretas. Em alguns casos, pode ser necessário reiniciar o OpenPLC Runtime para que as alterações tenham efeito.
 
 
-* https://openplcproject.com/docs/2-6-slave-devices/
+# Referencias bibliográficas
+
+* OpenPLC Project. Documentação - Slave Devices. Disponível em: https://openplcproject.com/docs/2-6-slave-devices/. Acesso em: 19 de Julho de 2023.
+* Modbus Organization. Modbus Protocol Technical Reference. Disponível em: https://modbus.org/tech.php. Acesso em: 19 de julho de 2023.
+* CITI Systems. O que é Modbus. Disponível em: https://www.citisystems.com.br/modbus/. Acesso em: 21 de julho de 2023.
+* Wikipedia. Modbus. Disponível em: https://pt.wikipedia.org/wiki/Modbus. Acesso em: 20 de julho de 2023.
+* Blog Kalatec. Protocolo Modbus: O que é e como funciona. Disponível em: https://blog.kalatec.com.br/protocolo-modbus/. Acesso em: 23 de julho de 2023.
 
 # Status do Projeto
 
