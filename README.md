@@ -6,10 +6,12 @@ Prof Epaminondas Lage</p>
 # Índice 
 
 * [Introdução](#Introdução)
+* [Introdução ao protocolo de comunicação Modbus](#Introdução-ao-protocolo-de-comunicação-Modbus)
 * [Endereçamento Modbus](#EndereçamentoModbus)
-* [Funções Modbus no OpenPLC](#Funções-Modbus-no-OpenPLC)
 * [Dispositivos Escravos](#Dispositivos-Escravos)
 * [Adicionando Placas Compatíveis com Arduino como Dispositivos Escravos](#Adicionando-Placas-Compatíveis-com-Arduino-como-Dispositivos-Escravos)
+* [Planta de controle de temperatura de água](#Planta-de-controle-de-temperatura-de-água)
+*[Referencias bibliográficas](#Referencias-bibliográficas)
 
 # Introdução
 
@@ -23,7 +25,7 @@ Ele se tornou um protocolo de comunicação padrão na indústria e atualmente �
 
 No OpenPLC, é possível implementar a comunicação Modbus tanto na versão mestre (cliente) quanto na versão escrava (servidor). Isso permite que o OpenPLC atue como um dispositivo mestre para ler e escrever dados de dispositivos Modbus escravos, ou como um dispositivo escravo para responder a solicitações de leitura ou escrita de outros dispositivos Modbus mestres.
 
-# Básico do protocolo de comunicação Modbus
+# Introdução ao protocolo de comunicação Modbus
 
 As informações do protocolo são encapsuladas em formato binário em frames TCP para uso do meio físico Ethernet (IEEE 802.3). Seu método de controle de acesso é o CSMA-CD (Carrier Sense Multiple Access/Collision Detection – sistema que evita a colisão na emissão de pacotes de dados), com estações do tipo cliente-servidor ou mestre-escravo.
 
@@ -106,7 +108,6 @@ Os formatos básicos dos quadros Modbus em suas diferentes variantes.
 
 Nenhum checksum é utilizado no Modbus TCP/IP, pois a camada de transporte TCP já fornece mecanismos de verificação de integridade dos dados.
 
-
 # Endereçamento Modbus no OpenPLC
 
 O OpenPLC pode ser configurado como escravo Modbus (servidor). Um escravo Modbus é normalmente controlado por um mestre que realiza medição e controle. O mestre remoto inicia requisições de leitura e escrita para o escravo OpenPLC enviando quadros Modbus pela rede (Modbus/TCP). O micro runtime OpenPLC para placas compatíveis com Arduino também suporta quadros Modbus via serial e USB. O OpenPLC Runtime para hosts Linux e Windows possui um servidor Modbus rodando por padrão na porta TCP 502. Esta configuração pode ser alterada na aba “Settings”.
@@ -139,7 +140,6 @@ Os endereços Modbus vinculam-se a endereços PLC com base no valor do endereço
 </table>
 
 Devido a limitações de memória, plataformas embarcadas como placas Arduino possuem um espaço de endereçamento Modbus muito mais limitado, conforme tabela abaixo:
-
 
 <table border="0">
 <tbody>
@@ -200,6 +200,7 @@ O OpenPLC oferece modelos para facilitar a adição de placas Arduino como dispo
 * Após fornecer as informações necessárias, clique no botão "Save" (Salvar) ou "Add" (Adicionar) para adicionar o Dispositivo Escravo à configuração do OpenPLC.
 * Verifique se o Dispositivo Escravo foi adicionado corretamente e se as configurações estão corretas. Em alguns casos, pode ser necessário reiniciar o OpenPLC Runtime para que as alterações tenham efeito.
 
+# Planta de controle de temperatura de água
 
 # Referencias bibliográficas
 
